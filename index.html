@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD RASEL ISLAM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:60px 20px;
+color:white;
+}
+
+.profile{
+width:160px;
+height:160px;
+border-radius:50%;
+overflow:hidden;
+margin:auto;
+border:4px solid #00f2ff;
+box-shadow:0 0 25px #00f2ff;
+}
+
+.profile img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.typing{
+margin-top:10px;
+color:#ccc;
+height:25px;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:center;
+background:black;
+padding:10px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+/* ⚪ ABOUT */
+.about-box{
+background:white;
+color:black;
+padding:25px;
+margin:20px;
+border-radius:15px;
+}
+
+/* ⚫ SKILLS */
+.skills-box{
+background:black;
+color:white;
+padding:25px;
+margin:20px;
+border-radius:15px;
+}
+
+/* 🔵 PROJECTS */
+.projects-box{
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+padding:25px;
+margin:20px;
+border-radius:15px;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:15px;
+}
+
+.project{
+background:white;
+color:black;
+border-radius:10px;
+overflow:hidden;
+}
+
+.project img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.project h3, .project p{
+margin:10px;
+}
+
+.project a{
+display:inline-block;
+margin:10px;
+padding:8px 15px;
+background:#00c6ff;
+color:black;
+border-radius:5px;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:black;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="profile">
+<img src="https://i.ibb.co/FLPWHDqC/your-image.jpg">
+</div>
+
+<h1>MD RASEL ISLAM</h1>
+<div id="typing" class="typing"></div>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="about-box">
+<h2>About Me</h2>
+<p>I am a freelancer skilled in MS Word, Excel, PowerPoint, Digital Marketing, Hardware & System Software.</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="skills-box">
+<h2>My Skills</h2>
+<p>MS Word | Excel | PowerPoint | Digital Marketing | Developer</p>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="projects-box">
+<h2>My Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<h3>Portfolio Website</h3>
+<p>My personal portfolio website</p>
+<a href="#">View</a>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
+<h3>Data Entry Work</h3>
+<p>MS Word & Excel projects</p>
+<a href="#">View</a>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312">
+<h3>Digital Marketing</h3>
+<p>Online marketing projects</p>
+<a href="#">View</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="skills-box">
+<h2>Contact</h2>
+<p>Email: isalmmdrasel11@gmail.com</p>
+<p>Phone: +8801968210599</p>
+<p>WhatsApp: +8801968210599</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 MD RASEL ISLAM</p>
+</footer>
+
+<!-- TYPING SCRIPT -->
+<script>
+const words=["Freelancer","Digital Marketer","Developer"];
+let i=0,j=0,del=false;
+
+function type(){
+let current=words[i];
+document.getElementById("typing").innerHTML=current.substring(0,j);
+
+if(!del && j<current.length){j++;}
+else if(del && j>0){j--;}
+else if(j==current.length){del=true;setTimeout(type,1000);return;}
+else{del=false;i=(i+1)%words.length;}
+
+setTimeout(type,del?50:100);
+}
+type();
+</script>
+
+</body>
+</html>
